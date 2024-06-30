@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enter Email ID</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <div class="container">
+    <form id="emailForm">
+        <label for="email">Enter Email ID:</label>
+        <input type="email" id="email" placeholder="Enter email.." >
+        <button type="button" onclick="fetchData()">Fetch Data</button>
+    </form>
+</div>
+
+    <script>
+    function fetchData() {
+        var emailId = document.getElementById('email').value;
+        
+        // Encode emailId before appending to URL
+        var encodedEmail = encodeURIComponent(emailId);
+
+        // Redirect to index2.html with encoded emailId as URL parameter
+        window.location.href = 'index2.html?email=' + encodedEmail;
+    }
+</script>
+</body>
+</html>
