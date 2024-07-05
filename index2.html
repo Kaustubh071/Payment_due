@@ -409,6 +409,13 @@ body {
                                         remark = 'Late';
                                     }
                                 } else if (index === currentMonth) {
+
+                                    if (monthData.mode === 'Online' || monthData.mode === 'Cash') {
+                                        remark = 'Paid &#10004;';
+                                        receipt = '<a class="payment-link" href="#">View Receipt</a>';
+                                    }
+                                    else
+
                                     remark = '<a class="payment-link" href="#">Make Payment</a>';
                                 }
 
