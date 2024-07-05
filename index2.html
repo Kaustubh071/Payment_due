@@ -19,6 +19,8 @@ body {
 }
 
 .container {
+
+    display: none;
     width: 100%;
     max-width: 2100px;
     margin: 20px auto;
@@ -432,6 +434,9 @@ body {
                         `;
 
                         $('#dashboard').html(dashboardContent);
+
+                         // Show the container after data is loaded
+                         $('.container').fadeIn();
                     }
 
                     // Hide loader after data is loaded
