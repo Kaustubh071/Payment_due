@@ -15,28 +15,6 @@
             box-sizing: border-box;
         }
 
-        .paid {
-            background-color: #34C759; /* Green background */
-            color: #fff; /* White text */
-            padding: 5px 5px;
-            border-radius: 5px;
-            
-        }
-        
-        .late {
-            background-color: #f61616; /* Red background */
-            color: #fff; /* White text */
-            padding: 5px 5px;
-            border-radius: 5px;
-            
-        }
-
-        .make{
-            background-color: #0696f6; /* Red background */
-            color: #fff; /* White text */
-            padding: 5px 5px;
-            border-radius: 5px;
-        }
         .container {
             display: none;
             width: 100%;
@@ -50,13 +28,11 @@
         }
 
         .header {
-            background: -webkit-linear-gradient(right,#ba3cba, #582e58  , #ac31ac,#562a56);
+            background-color: #9200d2;
             color: #fff;
             padding: 20px;
             text-align: center;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            background-repeat: no-repeat;
-            background-size: cover;
         }
 
         .header h1 {
@@ -74,166 +50,65 @@
         }
 
         .card {
-            padding: 12px 16px;
-            border-radius: 12px;
-            box-shadow: 0 6px 18px rgba(255, 255, 255, 0.1), 0 0 0 rgba(0, 0, 0, 0.2);
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 9px;
+            padding-left: 13px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            background: white; /* White cards */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding-bottom: 8px;
-            border: 1px solid rgba(0, 0, 0, 0.05); /* Subtle border */
-            position: relative; /* Add this to allow absolute positioning of the design element */
-          }
-          
-          .card:after {
-            content: ""; /* Required for :after pseudo-element */
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 150px; /* Adjust the width to your liking */
-            height: 100%;
-            background-image: url("https://themewagon.github.io/purple-react/static/media/circle.953c9ca0.svg"); /* Replace with your design image */
-            background-size: contain;
-            background-position: center;
-            background-repeat: no-repeat;
-          }
-          
-          .card:nth-child(1) {
-            background: linear-gradient(to bottom, #ffd7be, #ffc499); /* Light orange gradient background */
-            border: 1px solid rgba(255, 153, 102, 0.2); /* Light orange border */
-          }
-          
-          .card:nth-child(1):hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 12px 24px rgba(255, 153, 102, 0.3), 0 0 0 rgba(255, 255, 255, 0.2);
-            background: linear-gradient(to bottom, #ffc499, #ffd7be); /* Gradient reversal on hover */
-          }
-          
-          .card:nth-child(2) {
-            background: linear-gradient(to bottom, #c7eafc, #87d7f2); /* Light blue gradient background */
-            border: 1px solid rgba(135, 215, 242, 0.2); /* Light blue border */
-          }
-          
-          .card:nth-child(2):hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 12px 24px rgba(135, 215, 242, 0.3), 0 0 0 rgba(255, 255, 255, 0.2);
-            background: linear-gradient(to bottom, #87d7f2, #c7eafc); /* Gradient reversal on hover */
-          }
-          
-          .card:nth-child(3) {
-            background: linear-gradient(to bottom, #d7f2c4, #8bc34a); /* Light green gradient background */
-            border: 1px solid rgba(139, 195, 74, 0.2); /* Light green border */
-          }
-          
-          .card:nth-child(3):hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 12px 24px rgba(139, 195, 74, 0.3), 0 0 0 rgba(255, 255, 255, 0.2);
-            background: linear-gradient(to bottom, #8bc34a, #d7f2c4); /* Gradient reversal on hover */
-          }
+            padding-bottom: 0px;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
 
         .field {
             margin-bottom: 15px;
             font-size: 16px;
             color: #100101; /* Dark gray text */
         }
-/* Updated table styles */
-.monthly-data {
-    width: 100%;
-    margin-top: 20px;
-    overflow-x: auto;
-    white-space: nowrap;
-    font-size: 14px;
-    font-weight: 500;
-    color: #333; /* Dark text color */
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #f7f7f7; /* Light gray background */
-    position: relative;
-  }
-  
-  .monthly-data::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(to bottom, #f7f7f7, #fff);
-    opacity: 0.5;
-    z-index: -1;
-  }
-  
-  .monthly-data th, .monthly-data td {
-    padding: 15px 20px; /* Adjust padding for better spacing */
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-    position: relative;
-  }
-  
-  .monthly-data th {
-    background-color: #333; /* Dark gray table header background */
-    color: #fff; /* White text color */
-    font-weight: bold;
-    text-transform: uppercase;
-    position: sticky;
-    top: 0;
-    z-index: 1;
-  }
-  
-  .monthly-data th::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(to bottom, #333, #444);
-    opacity: 0.5;
-    z-index: -1;
-  }
-  
-  .monthly-data td {
-    background-color: #fff; /* White table cell background */
-    transition: background-color 0.3s ease;
-  }
-  
-  .monthly-data tr:hover td {
-    background-color: #f2f2f2; /* Light gray table row hover background */
-  }
-  
-  .monthly-data tr:nth-child(even) td {
-    background-color: #f9f9f9; /* Light gray table row background for even rows */
-  }
-  
-  .payment-link {
-    color: #fff; /* Blue link color */
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
-  
-  .payment-link:hover {
-    color: #fff; /* Darker blue link color on hover */
-    text-decoration: underline;
-  }
-  
-  .monthly-data td::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: linear-gradient(to bottom, #fff, #f7f7f7);
-    opacity: 0.5;
-    z-index: -1;
-  }
-  
-  .monthly-data td:hover::before {
-    background-image: linear-gradient(to bottom, #f2f2f2, #fff);
-  }
 
+        .monthly-data {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
 
+        .monthly-data th, .monthly-data td {
+            border: 1px solid #ddd;
+            text-align: left;
+            padding: 8px;
+        }
+        .monthly-data td{
+            background-color: #f2f2f2;
+        }
+
+        .monthly-data th {
+            background-color: #b0adad; /* Light gray table header background */
+            font-weight: 700;
+        }
+
+        .monthly-data tr:hover {
+            background-color: #f1f1f1; /* Light gray table row hover background */
+        }
+
+        .payment-link {
+            color: #0696f6; /* Blue link color */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .payment-link:hover {
+            color: #217dbb; /* Darker blue link color on hover */
+            text-decoration: underline;
+        }
 
         /* Loader styles */
         #loading {
@@ -368,9 +243,9 @@
                     } else {
                         var dashboardContent = `
                             <div class="header">
-                                <h1 style="text-transform: uppercase">Asterisc Group</h1>
+                                <h1>Asterisc Group</h1>
                             </div>
-                            <div class="title"><h2 style="text-transform: uppercase">Student Dashboard</h2></div>
+                            <div class="title"><h2>Student Dashboard</h2></div>
                             <div class="content">
                                 <div class="card">
                                     <div class="field"><span><b>Name:</b></span><br> ${data.studentName}</div>
@@ -410,28 +285,26 @@
 
                         months.forEach(function (month, index) {
                             var monthData = data.months[month];
-                            var receipt = '<p style="color: #2c3e50">-<p>';
-                            var remark = '<p style="color: #2c3e50">-<p>';
-                        
+                            var receipt = '-';
+                            var remark = '-';
+
                             if (monthData && monthData.amount) {
                                 if (index < currentMonth) {
                                     if (monthData.mode === 'Online' || monthData.mode === 'Cash') {
-                                        remark = '<span class="paid">Paid &#10004;</span>';
-                                        receipt = '<a class="payment-link" style="color: #0696f6" href="#">View Receipt</a>';
+                                        remark = 'Paid &#10004;';
+                                        receipt = '<a class="payment-link" href="#">View Receipt</a>';
                                     } else {
-                                        remark = '<span class="late">Late</span>';
+                                        remark = 'Late';
                                     }
                                 } else if (index === currentMonth) {
                                     if (monthData.mode === 'Online' || monthData.mode === 'Cash') {
                                         remark = 'Paid &#10004;';
-                                        receipt = '<a class="payment-link" style="color: #0696f6" href="#">View Receipt</a>';
+                                        receipt = '<a class="payment-link" href="#">View Receipt</a>';
                                     } else {
-                                        remark = '<span class="make"><a class="payment-link" href="#">Make Payment</a></span>';
+                                        remark = '<a class="payment-link" href="#">Make Payment</a>';
                                     }
                                 }
-                        
-                                var remarkClass = monthData.mode === 'Online' || monthData.mode === 'Cash' ? 'paid' : 'late';
-                        
+
                                 dashboardContent += `
                                     <tr>
                                         <td>${sr + 1}</td>
@@ -439,7 +312,7 @@
                                         <td>${monthData.date ? formatDate(monthData.date) : '-'}</td>
                                         <td>${monthData.amount}</td>
                                         <td>${monthData.mode || '-'}</td>
-                                        <td class="${remarkClass}">${remark}</td>
+                                        <td>${remark}</td>
                                         <td>${receipt}</td>
                                     </tr>
                                 `;
