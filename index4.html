@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<table>
+    <tbody id="MyTBody">
+        <!-- <tr>
+            <th colspan="10"><h1>ASTERISC COMPUTER INSTITUTE FEES 2024 -25</h1></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th>107,000.00</th>
+            <th></th>
+            <th></th>
+            <th>96,000.00</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+        <tr>
+            <td>Sr. No.</td>
+            <td>WA</td>
+            <td>STUDENT NAME</td>
+            <td>MOBILE STUDENT</td>
+            <td>Admission DATE</td>
+            <td>TOTAL FEES PAID</td>
+            <td>REMAINING FEES</td>
+            <td>JANUARY</td>
+            <td></td>
+            <td></td>
+            <td>FEBRUARY</td>
+            <td></td>
+            <td></td>
+            <td>MARCH</td>
+            <td></td>
+            <td></td>
+            <td>APRIL</td>
+            <td></td>
+            <td></td>
+            <td>MAY</td>
+            <td></td>
+            <td></td>
+            <td>JUNE</td>
+            <td></td>
+            <td></td>
+            <td>JULY</td>
+            <td></td>
+            <td></td>
+            <td>AUGUST</td>
+            <td></td>
+            <td></td>
+            <td>SEPTEMBER</td>
+            <td></td>
+            <td></td>
+            <td>OCTOBER</td>
+            <td></td>
+            <td></td>
+            <td>NOVEMBER</td>
+            <td></td>
+            <td></td>
+            <td>DECEMBER</td>
+            <td></td>
+            <td></td>
+            <td>FINE CHARGES</td>
+            <td>Installment</td>
+            <td>TOTAL FEES</td>
+            <td>ADMISSION FEES</td>
+            <td>MONTHLY FEES</td>
+            <td>BRANCH</td>
+            <td>COURSE</td>
+            <td>TRAINER Mail ID</td>
+            <td>Mail Sent</td>
+            <td>MAIL ID</td>
+            <td>Branch</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>DATE</td>
+            <td>AMOUNT</td>
+            <td>MODE</td>
+            <td>DATE</td>
+            <td>AMOUNT</td>
+            <td>MODE</td>
+            <td>DATE</td>
+            <td>AMOUNT</td>
+            <td>MODE</td>
+            <td>DATE</td>
+            <td>AMOUNT</td>
+            <td>MODE</td>
+            <td>DATE</td>
+            <td>AMOUNT</td>
+            <td>MODE</td>
+            <td>DATE</td>
+            <td>AMOUNT</td>
+            <td>MODE</td>
+            <td>DATE</td>
+            <td>AMOUNT</td>
+            <td>MODE</td>
+            <td>DATE</td>
+            <td>AMOUNT</td>
+            <td>MODE</td>
+            <td>DATE</td>
+            <td>AMOUNT</td>
+            <td>MODE</td>
+            <td>DATE</td>
+            <td>AMOUNT</td>
+            <td>MODE</td>
+            <td>DATE</td>
+            <td>AMOUNT</td>
+            <td>MODE</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr> -->
+    </tbody>
+</table>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+
+<!-- <script>
+    $(document).ready(function () {
+        $.getJSON("https://script.google.com/macros/s/AKfycbyw_pXRZUJVnssD1udzXlTuWHLSjujC_JD6pJiKR7HfknrztIxB5wSIZBKJ6GiihKK4/exec", function (data) {
+            var Rows = "";
+            var modeColumnIndexes = [9,12,15,18,21,24,27,30,33,36,39,42]; // Add the known index(es) of 'MODE' columns here
+
+            $.each(data, function (key, value) {
+                var Columns = "";
+                var rowHasData = false; // Flag to check if the row has data
+
+                $.each(value, function (index, value1) {
+                    if (value1) {
+                        rowHasData = true;
+                    }
+                    if (typeof value1 === 'boolean') {
+                        Columns += '<td><input type="checkbox" enabled ' + (value1 ? 'checked' : '') + ' onclick="updateDate(this)"></td>';
+                    } else if (isValidDate(value1)) {
+                        var formattedDate = formatDate(value1);
+                        Columns += '<td>' + formattedDate + '</td>';
+                    } else if (modeColumnIndexes.includes(index)) {
+                        // Create dropdown options for MODE
+                        var options = '<option value="">Select</option>' +
+                                      '<option value="Cash">Cash</option>' +
+                                      '<option value="Online">Online</option>';
+                        Columns += '<td>' + (rowHasData ? '<select>' + options + '</select>' : '') + '</td>';
+                    } else {
+                        Columns += '<td>' + value1 + '</td>';
+                    }
+                });
+
+                // Only append the row if it has data
+                if (rowHasData) {
+                    Rows += '<tr>' + Columns + '</tr>';
+                }
+            });
+
+            $("#MyTBody").append(Rows);
+        });
+    });
+
+    function isValidDate(dateString) {
+        var isoDateRegex = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d{3}Z$/;
+        return isoDateRegex.test(dateString);
+    }
+    
+    function formatDate(dateString) {
+        var dateObj = new Date(dateString);
+        var day = dateObj.getUTCDate();
+        var month = dateObj.getUTCMonth() + 1;
+        var year = dateObj.getUTCFullYear();
+    
+        if (day < 10) {
+            day = '0' + day;
+        }
+        if (month < 10) {
+            month = '0' + month;
+        }
+    
+        return day + '-' + month + '-' + year;
+    }
+
+    function updateDate(checkbox) {
+        if (checkbox.checked) {
+            var today = new Date();
+            var formattedDate = ('0' + today.getDate()).slice(-2) + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + today.getFullYear();
+            var cell = checkbox.parentNode;
+            cell.innerHTML = formattedDate;
+        } else {
+            // Handle unchecking if needed
+        }
+    }
+</script> -->
+
+
+<!-- <script>
+    $(document).ready(function () {
+        // Fetch email ID from URL parameters
+        var urlParams = new URLSearchParams(window.location.search);
+        var emailId = urlParams.get('email');
+
+        if (emailId) {
+            // Fetch data based on emailId
+            $.getJSON("https://script.google.com/macros/s/AKfycbz_iccOdqPu9MBNqM8es9niEhlJUXaUEIdYUjcjsHezeuiHLM-MSXkzMOBXebWTNCT8/exec?emailId=" + emailId, function (data) {
+                var Rows = "";
+                var modeColumnIndexes = [9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42]; // Add the known index(es) of 'MODE' columns here
+
+                $.each(data, function (key, value) {
+                    var Columns = "";
+                    var rowHasData = false; // Flag to check if the row has data
+
+                    $.each(value, function (index, value1) {
+                        if (value1) {
+                            rowHasData = true;
+                        }
+                        if (typeof value1 === 'boolean') {
+                            Columns += '<td><input type="checkbox" enabled ' + (value1 ? 'checked' : '') + ' onclick="updateDate(this)"></td>';
+                        } else if (isValidDate(value1)) {
+                            var formattedDate = formatDate(value1);
+                            Columns += '<td>' + formattedDate + '</td>';
+                        } else if (modeColumnIndexes.includes(index)) {
+                            // Create dropdown options for MODE
+                            var options = '<option value="">Select</option>' +
+                                          '<option value="Cash">Cash</option>' +
+                                          '<option value="Online">Online</option>';
+                            Columns += '<td>' + (rowHasData ? '<select>' + options + '</select>' : '') + '</td>';
+                        } else {
+                            Columns += '<td>' + value1 + '</td>';
+                        }
+                    });
+
+                    // Only append the row if it has data
+                    if (rowHasData) {
+                        Rows += '<tr>' + Columns + '</tr>';
+                    }
+                });
+
+                $("#MyTBody").html(Rows); // Replace existing rows with filtered rows
+            });
+        } else {
+            // Handle case where no emailId is provided
+            console.log('No email ID provided.');
+        }
+    });
+
+    function isValidDate(dateString) {
+        var isoDateRegex = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d{3}Z$/;
+        return isoDateRegex.test(dateString);
+    }
+
+    function formatDate(dateString) {
+        var dateObj = new Date(dateString);
+        var day = dateObj.getUTCDate();
+        var month = dateObj.getUTCMonth() + 1;
+        var year = dateObj.getUTCFullYear();
+
+        if (day < 10) {
+            day = '0' + day;
+        }
+        if (month < 10) {
+            month = '0' + month;
+        }
+
+        return day + '-' + month + '-' + year;
+    }
+
+    function updateDate(checkbox) {
+        if (checkbox.checked) {
+            var today = new Date();
+            var formattedDate = ('0' + today.getDate()).slice(-2) + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + today.getFullYear();
+            var cell = checkbox.parentNode;
+            cell.innerHTML = formattedDate;
+        } else {
+            // Handle unchecking if needed
+        }
+    }
+</script> -->
+
+<!-- <script>
+    $(document).ready(function () {
+        var emailId = getQueryVariable('email');
+    
+        if (emailId) {
+            // Fetch data based on emailId
+            $.getJSON("https://script.google.com/macros/s/AKfycbz_iccOdqPu9MBNqM8es9niEhlJUXaUEIdYUjcjsHezeuiHLM-MSXkzMOBXebWTNCT8/exec?emailId=" + encodeURIComponent(emailId), function (data) {
+                var Rows = "";
+                var modeColumnIndexes = [9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42]; // Add the known index(es) of 'MODE' columns here
+    
+                // Build table headers
+                var headers = '<thead>' +
+                    '<tr>' +
+                    '<th colspan="10"><h1>ASTERISC COMPUTER INSTITUTE FEES 2024 - 25</h1></th>' +
+                    '<th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th>' +
+                    '<th></th><th></th><th></th><th></th><th></th><th></th><th>107,000.00</th><th></th><th></th><th>96,000.00</th><th></th><th></th>' +
+                    '<th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th>' +
+                    '</tr>' +
+                    '<tr>' +
+                    '<th>Sr. No.</th>' +
+                    '<th>WA</th>' +
+                    '<th>STUDENT NAME</th>' +
+                    '<th>MOBILE STUDENT</th>' +
+                    '<th>Admission DATE</th>' +
+                    '<th>TOTAL FEES PAID</th>' +
+                    '<th>REMAINING FEES</th>' +
+                    '<th>JANUARY</th>' +
+                    '<th></th><th></th>' +
+                    '<th>FEBRUARY</th>' +
+                    '<th></th><th></th>' +
+                    '<th>MARCH</th>' +
+                    '<th></th><th></th>' +
+                    '<th>APRIL</th>' +
+                    '<th></th><th></th>' +
+                    '<th>MAY</th>' +
+                    '<th></th><th></th>' +
+                    '<th>JUNE</th>' +
+                    '<th></th><th></th>' +
+                    '<th>JULY</th>' +
+                    '<th></th><th></th>' +
+                    '<th>AUGUST</th>' +
+                    '<th></th><th></th>' +
+                    '<th>SEPTEMBER</th>' +
+                    '<th></th><th></th>' +
+                    '<th>OCTOBER</th>' +
+                    '<th></th><th></th>' +
+                    '<th>NOVEMBER</th>' +
+                    '<th></th><th></th>' +
+                    '<th>DECEMBER</th>' +
+                    '<th></th><th></th>' +
+                    '<th>FINE CHARGES</th>' +
+                    '<th>Installment</th>' +
+                    '<th>TOTAL FEES</th>' +
+                    '<th>ADMISSION FEES</th>' +
+                    '<th>MONTHLY FEES</th>' +
+                    '<th>BRANCH</th>' +
+                    '<th>COURSE</th>' +
+                    '<th>TRAINER Mail ID</th>' +
+                    '<th>Mail Sent</th>' +
+                    '<th>MAIL ID</th>' +
+                    '<th>Branch</th>' +
+                    '<th></th>' +
+                    '</tr>' +
+                    '<tr>' +
+                    '<th></th>' +
+                    '<th></th>' +
+                    '<th></th>' +
+                    '<th></th>' +
+                    '<th></th>' +
+                    '<th></th>' +
+                    '<th></th>' +
+                    '<th>DATE</th>' +
+                    '<th>AMOUNT</th>' +
+                    '<th>MODE</th>' +
+                    '<th>DATE</th>' +
+                    '<th>AMOUNT</th>' +
+                    '<th>MODE</th>' +
+                    '<th>DATE</th>' +
+                    '<th>AMOUNT</th>' +
+                    '<th>MODE</th>' +
+                    '<th>DATE</th>' +
+                    '<th>AMOUNT</th>' +
+                    '<th>MODE</th>' +
+                    '<th>DATE</th>' +
+                    '<th>AMOUNT</th>' +
+                    '<th>MODE</th>' +
+                    '<th>DATE</th>' +
+                    '<th>AMOUNT</th>' +
+                    '<th>MODE</th>' +
+                    '<th>DATE</th>' +
+                    '<th>AMOUNT</th>' +
+                    '<th>MODE</th>' +
+                    '<th>DATE</th>' +
+                    '<th>AMOUNT</th>' +
+                    '<th>MODE</th>' +
+                    '<th>DATE</th>' +
+                    '<th>AMOUNT</th>' +
+                    '<th>MODE</th>' +
+                    '<th>DATE</th>' +
+                    '<th>AMOUNT</th>' +
+                    '<th>MODE</th>' +
+                    '<th>DATE</th>' +
+                    '<th>AMOUNT</th>' +
+                    '<th>MODE</th>' +
+                    '<th></th>' +
+                    '<th></th>' +
+                    '<th></th>' +
+                    '<th></th>' +
+                    '<th></th>' +
+                    '<th></th>' +
+                    '<th></th>' +
+                    '<th></th>' +
+                    '<th></th>' +
+                    '<th></th>' +
+                    '<th></th>' +
+                    '</tr>' +
+                    '</thead>';
+    
+                // Build table rows
+                $.each(data, function (key, value) {
+                    var Columns = "";
+                    var rowHasData = false; // Flag to check if the row has data
+    
+                    $.each(value, function (index, value1) {
+                        if (value1) {
+                            rowHasData = true;
+                        }
+                        if (typeof value1 === 'boolean') {
+                            Columns += '<td><input type="checkbox" enabled ' + (value1 ? 'checked' : '') + ' onclick="updateDate(this)"></td>';
+                        } else if (isValidDate(value1)) {
+                            var formattedDate = formatDate(value1);
+                            Columns += '<td>' + formattedDate + '</td>';
+                        } else if (modeColumnIndexes.includes(index)) {
+                            // Create dropdown options for MODE
+                            var options = '<option value="">Select</option>' +
+                                          '<option value="Cash">Cash</option>' +
+                                          '<option value="Online">Online</option>';
+                            Columns += '<td>' + (rowHasData ? '<select>' + options + '</select>' : '') + '</td>';
+                        } else {
+                            Columns += '<td>' + value1 + '</td>';
+                        }
+                    });
+    
+                    // Only append the row if it has data
+                    if (rowHasData) {
+                        Rows += '<tr>' + Columns + '</tr>';
+                    }
+                });
+    
+                // Combine headers and rows
+                var tableHtml = headers + '<tbody id="MyTBody">' + Rows + '</tbody>';
+    
+                // Replace entire table content
+                $("table").html(tableHtml);
+            });
+        } else {
+            console.log('No email ID provided.');
+        }
+    });
+    
+    function getQueryVariable(variable) {
+        var query = window.location.search.substring(1); // Excludes the '?' character
+        var vars = query.split('&');
+    
+        for (var i = 0; i < vars.length; i++) {
+            var pair = vars[i].split('=');
+            if (decodeURIComponent(pair[0]) === variable) {
+                return decodeURIComponent(pair[1]);
+            }
+        }
+        console.log('Query parameter %s not found', variable);
+        return null;
+    }
+    
+    function isValidDate(dateString) {
+        var isoDateRegex = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d{3}Z$/;
+        return isoDateRegex.test(dateString);
+    }
+    
+    function formatDate(dateString) {
+        var dateObj = new Date(dateString);
+        var day = dateObj.getUTCDate();
+        var month = dateObj.getUTCMonth() + 1;
+        var year = dateObj.getUTCFullYear();
+    
+        if (day < 10) {
+            day = '0' + day;
+        }
+        if (month < 10) {
+            month = '0' + month;
+        }
+    
+        return day + '-' + month + '-' + year;
+    }
+    
+    function updateDate(checkbox) {
+        if (checkbox.checked) {
+            var today = new Date();
+            var formattedDate = ('0' + today.getDate()).slice(-2) + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + today.getFullYear();
+            var cell = checkbox.parentNode;
+            cell.innerHTML = formattedDate;
+        } else {
+            // Handle unchecking if needed
+        }
+    }
+    
+</script> -->
+<script>
+    $(document).ready(function () {
+        var emailId = getQueryVariable('email');
+    
+        if (emailId) {
+            // Fetch data based on emailId
+            $.getJSON("https://script.google.com/macros/s/AKfycbxdIK44cusCLPNgMVymzEQre8ZBu36t8uortNkK2ZNJO1q8D8hhXTCYHlpA99NTMWlN/exec?emailId=" + encodeURIComponent(emailId), function (data) {
+                var Rows = "";
+                var modeColumnIndexes = [9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42]; // Add the known index(es) of 'MODE' columns here
+    
+                // Build table headers
+                var headers = '<thead>' +
+                    '<tr>' +
+                    '<th colspan="10"><h1>ASTERISC COMPUTER INSTITUTE FEES 2024 - 25</h1></th>' +
+                    '<th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th>' +
+                    '<th></th><th></th><th></th><th></th><th></th><th></th><th>107,000.00</th><th></th><th></th><th>96,000.00</th><th></th><th></th>' +
+                    '<th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th>' +
+                    '</tr>' +
+                    '<tr>' +
+                    '<th>Sr. No.</th>' +
+                    '<th>WA</th>' +
+                    '<th>STUDENT NAME</th>' +
+                    '<th>MOBILE STUDENT</th>' +
+                    '<th>Admission DATE</th>' +
+                    '<th>TOTAL FEES PAID</th>' +
+                    '<th>REMAINING FEES</th>' +
+                    '<th>JANUARY</th>' +
+                    '<th></th><th></th>' +
+                    '<th>FEBRUARY</th>' +
+                    '<th></th><th></th>' +
+                    '<th>MARCH</th>' +
+                    '<th></th><th></th>' +
+                    '<th>APRIL</th>' +
+                    '<th></th><th></th>' +
+                    '<th>MAY</th>' +
+                    '<th></th><th></th>' +
+                    '<th>JUNE</th>' +
+                    '<th></th><th></th>' +
+                    '<th>JULY</th>' +
+                    '<th></th><th></th>' +
+                    '<th>AUGUST</th>' +
+                    '<th></th><th></th>' +
+                    '<th>SEPTEMBER</th>' +
+                    '<th></th><th></th>' +
+                    '<th>OCTOBER</th>' +
+                    '<th></th><th></th>' +
+                    '<th>NOVEMBER</th>' +
+                    '<th></th><th></th>' +
+                    '<th>DECEMBER</th>' +
+                    '<th></th><th></th>' +
+                    '<th>FINE CHARGES</th>' +
+                    '<th>Installment</th>' +
+                    '<th>TOTAL FEES</th>' +
+                    '<th>ADMISSION FEES</th>' +
+                    '<th>MONTHLY FEES</th>' +
+                    '<th>BRANCH</th>' +
+                    '<th>COURSE</th>' +
+                    '<th>TRAINER Mail ID</th>' +
+                    '<th>Mail Sent</th>' +
+                    '<th>MAIL ID</th>' +
+                    '<th>Branch</th>' +
+                    '<th></th>' +
+                    '</tr>' +
+                    '<tr>' +
+                    '<th></th>' +
+                    '<th></th>' +
+                    '<th></th>' +
+                    '<th></th>' +
+                    '<th></th>' +
+                    '<th></th>' +
+                    '<th></th>' +
+                    '<th>DATE</th>' +
+                    '<th>AMOUNT</th>' +
+                    '<th>MODE</th>' +
+                    '<th>DATE</th>' +
+                    '<th>AMOUNT</th>' +
+                    '<th>MODE</th>' +
+                    '<th>DATE</th>' +
+                    '<th>AMOUNT</th>' +
+                    '<th>MODE</th>' +
+                    '<th>DATE</th>' +
+                    '<th>AMOUNT</th>' +
+                    '<th>MODE</th>' +
+                    '<th>DATE</th>' +
+                    '<th>AMOUNT</th>' +
+                    '<th>MODE</th>' +
+                    '<th>DATE</th>' +
+                    '<th>AMOUNT</th>' +
+                    '<th>MODE</th>' +
+                    '<th>DATE</th>' +
+                    '<th>AMOUNT</th>' +
+                    '<th>MODE</th>' +
+                    '<th>DATE</th>' +
+                    '<th>AMOUNT</th>' +
+                    '<th>MODE</th>' +
+                    '<th>DATE</th>' +
+                    '<th>AMOUNT</th>' +
+                    '<th>MODE</th>' +
+                    '<th>DATE</th>' +
+                    '<th>AMOUNT</th>' +
+                    '<th>MODE</th>' +
+                    '<th>DATE</th>' +
+                    '<th>AMOUNT</th>' +
+                    '<th>MODE</th>' +
+                    '<th></th>' +
+                    '<th></th>' +
+                    '<th></th>' +
+                    '<th></th>' +
+                    '<th></th>' +
+                    '<th></th>' +
+                    '<th></th>' +
+                    '<th></th>' +
+                    '<th></th>' +
+                    '<th></th>' +
+                    '<th></th>' +
+                    '</tr>' +
+                    '</thead>';
+    
+                // Build table rows
+                $.each(data, function (key, value) {
+                    var Columns = "";
+                    var rowHasData = false; // Flag to check if the row has data
+    
+                    $.each(value, function (index, value1) {
+                        if (value1) {
+                            rowHasData = true;
+                        }
+                        if (typeof value1 === 'boolean') {
+                            Columns += '<td><input type="checkbox" enabled ' + (value1 ? 'checked' : '') + ' onclick="updateDate(this)"></td>';
+                        } else if (isValidDate(value1)) {
+                            var formattedDate = formatDate(value1);
+                            Columns += '<td>' + formattedDate + '</td>';
+                        } else if (modeColumnIndexes.includes(index)) {
+                            // Create dropdown options for MODE
+                            var options = '<option value="">Select</option>' +
+                                '<option value="Cash">Cash</option>' +
+                                '<option value="Online">Online</option>';
+                            Columns += '<td>' + (rowHasData ? '<select>' + options + '</select>' : '') + '</td>';
+                        }
+                        else if (index === 1) { // Assuming 'WA' is the second column (index 1)
+                    Columns += '<td><a href="https://example.com/' + value1 + '">' + value1 + '</a></td>';
+                } else {
+                            Columns += (value1 ? '<td>' + value1 + '</td>' : '<td></td>');
+                        }
+                    });
+    
+                    // Only append the row if it has data
+                    if (rowHasData) {
+                        Rows += '<tr>' + Columns + '</tr>';
+                    }
+                });
+    
+                // Combine headers and rows
+                var tableHtml = headers + '<tbody id="MyTBody">' + Rows + '</tbody>';
+    
+                // Replace entire table content
+                $("table").html(tableHtml);
+            });
+        } else {
+            console.log('No email ID provided.');
+        }
+    });
+    
+    function getQueryVariable(variable) {
+        var query = window.location.search.substring(1); // Excludes the '?' character
+        var vars = query.split('&');
+    
+        for (var i = 0; i < vars.length; i++) {
+            var pair = vars[i].split('=');
+            if (decodeURIComponent(pair[0]) === variable) {
+                return decodeURIComponent(pair[1]);
+            }
+        }
+        console.log('Query parameter %s not found', variable);
+        return null;
+    }
+    
+    function isValidDate(dateString) {
+        var isoDateRegex = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}.\d{3}Z$/;
+        return isoDateRegex.test(dateString);
+    }
+    
+    function formatDate(dateString) {
+        var dateObj = new Date(dateString);
+        var day = dateObj.getUTCDate();
+        var month = dateObj.getUTCMonth() + 1;
+        var year = dateObj.getUTCFullYear();
+    
+        if (day < 10) {
+            day = '0' + day;
+        }
+        if (month < 10) {
+            month = '0' + month;
+        }
+    
+        return day + '-' + month + '-' + year;
+    }
+    
+    function updateDate(checkbox) {
+        if (checkbox.checked) {
+            var today = new Date();
+            var formattedDate = ('0' + today.getDate()).slice(-2) + '-' + ('0' + (today.getMonth() + 1)).slice(-2) + '-' + today.getFullYear();
+            var cell = checkbox.parentNode;
+            cell.innerHTML = formattedDate;
+        } else {
+            // Handle unchecking if needed
+        }
+    }
+</script>
+
+
+
+</body>
+</html>
