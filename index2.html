@@ -258,10 +258,10 @@ body {
         <script>
             $(document).ready(function () {
                 var emailId = getQueryVariable('email');
-    
+        
                 // Show loader
                 $('#loading').show();
-    
+        
                 if (emailId) {
                     $.getJSON("https://script.google.com/macros/s/AKfycbwtkHFL844GxbWV2YLDGnFCo8gHmilkmOnQ8XeY4U2eCde4lXpGRZVRWON9aQbzvVQW/exec?emailId=" + encodeURIComponent(emailId), function (data) {
                         if (data.error) {
@@ -304,16 +304,16 @@ body {
                                         </thead>
                                         <tbody>
                             `;
-    
+        
                             var months = ['january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december'];
                             var currentMonth = new Date().getMonth(); // 0-11 (Jan-Dec)
                             var sr = 0;
-    
+        
                             months.forEach(function (month, index) {
                                 var monthData = data.months[month];
                                 var receipt = '-';
                                 var remark = '-';
-    
+        
                                 if (monthData && monthData.amount) {
                                     if (index < currentMonth) {
                                         if (monthData.mode === 'Online' || monthData.mode === 'Cash') {
@@ -330,7 +330,7 @@ body {
                                             remark = '<a class="payment-link" href="#">Make Payment</a>';
                                         }
                                     }
-    
+        
                                     dashboardContent += `
                                         <tr>
                                             <td>${sr + 1}</td>
@@ -345,19 +345,19 @@ body {
                                     sr++;
                                 }
                             });
-    
+        
                             dashboardContent += `
                                         </tbody>
                                     </table>
                                 </div>
                             `;
-    
+        
                             $('#dashboard').html(dashboardContent);
-    
+        
                             // Show the container after data is loaded
                             $('.container').fadeIn();
                         }
-    
+        
                         // Hide loader after data is loaded
                         $('#loading').hide();
                     });
@@ -365,13 +365,13 @@ body {
                     $('#dashboard').html('<p>No email ID provided.</p>');
                     $('#loading').hide();
                 }
-    
+        
                 // Cursor trail effect
                 const trails = [$('#trail1'), $('#trail2'), $('#trail3')];
                 let index = 0;
                 const trailDelay = 100; // Delay in milliseconds
-    
-                $(document).on('mousemove', function(event) {
+        
+                function updateTrail(event) {
                     const trail = trails[index];
                     trail.removeClass('inactive');
                     trail.css({
@@ -380,19 +380,26 @@ body {
                         transform: 'scale(1)',
                         opacity: 1
                     });
-    
+        
                     setTimeout(() => {
                         trail.addClass('inactive');
                     }, trailDelay);
-    
+        
                     index = (index + 1) % trails.length;
+                }
+        
+                $(document).on('mousemove', updateTrail);
+        
+                $(document).on('touchmove', function (event) {
+                    const touch = event.touches[0];
+                    updateTrail(touch);
                 });
             });
-    
+        
             function getQueryVariable(variable) {
                 var query = window.location.search.substring(1); // Excludes the '?' character
                 var vars = query.split('&');
-    
+        
                 for (var i = 0; i < vars.length; i++) {
                     var pair = vars[i].split('=');
                     if (decodeURIComponent(pair[0]) === variable) {
@@ -402,7 +409,7 @@ body {
                 console.log('Query parameter %s not found', variable);
                 return null;
             }
-    
+        
             function formatDate(dateString) {
                 var date = new Date(dateString);
                 var day = ("0" + date.getDate()).slice(-2);
@@ -411,6 +418,7 @@ body {
                 return day + "-" + month + "-" + year;
             }
         </script>
+        
 
     <!-- <script src="script.js"></script> -->
 </body>
