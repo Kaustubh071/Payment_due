@@ -367,33 +367,28 @@ body {
                 }
         
                 // Cursor trail effect
-                const trails = [$('#trail1'), $('#trail2'), $('#trail3')];
-                let index = 0;
-                const trailDelay = 100; // Delay in milliseconds
+                if (window.matchMedia("(min-width: 769px)").matches) {
+                    const trails = [$('#trail1'), $('#trail2'), $('#trail3')];
+                    let index = 0;
+                    const trailDelay = 100; // Delay in milliseconds
         
-                function updateTrail(event) {
-                    const trail = trails[index];
-                    trail.removeClass('inactive');
-                    trail.css({
-                        top: event.pageY + 'px',
-                        left: event.pageX + 'px',
-                        transform: 'scale(1)',
-                        opacity: 1
+                    $(document).on('mousemove', function (event) {
+                        const trail = trails[index];
+                        trail.removeClass('inactive');
+                        trail.css({
+                            top: event.pageY + 'px',
+                            left: event.pageX + 'px',
+                            transform: 'scale(1)',
+                            opacity: 1
+                        });
+        
+                        setTimeout(() => {
+                            trail.addClass('inactive');
+                        }, trailDelay);
+        
+                        index = (index + 1) % trails.length;
                     });
-        
-                    setTimeout(() => {
-                        trail.addClass('inactive');
-                    }, trailDelay);
-        
-                    index = (index + 1) % trails.length;
                 }
-        
-                $(document).on('mousemove', updateTrail);
-        
-                $(document).on('touchmove', function (event) {
-                    const touch = event.touches[0];
-                    updateTrail(touch);
-                });
             });
         
             function getQueryVariable(variable) {
